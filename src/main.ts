@@ -5,6 +5,8 @@ import {
   setFailed,
   warning
 } from '@actions/core'
+import {info, warning} from '@actions/core' // Ensure 'info' is imported
+
 import {Bot} from './bot'
 import {OpenAIOptions, Options} from './options'
 import {Prompts} from './prompts'
@@ -70,10 +72,11 @@ async function run(): Promise<void> {
 
   try {
     // check if the event is pull_request
-
+    info(`GITHUB_EVENT_NAME: ${process.env.GITHUB_EVENT_NAME || 'undefined'}`)
     warning("THis is the event name, please check if it is correct")
     warning(process.env.GITHUB_EVENT_NAME || 'undefined');
     
+
     if (
       process.env.GITHUB_EVENT_NAME === 'pull_request' ||
       process.env.GITHUB_EVENT_NAME === 'pull_request_target'
