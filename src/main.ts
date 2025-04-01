@@ -71,6 +71,9 @@ async function run(): Promise<void> {
   try {
     // check if the event is pull_request
     if (
+
+      warning("THis is the event name, please check if it is correct")
+      warning(process.env.GITHUB_EVENT_NAME || 'undefined');
       process.env.GITHUB_EVENT_NAME === 'pull_request' ||
       process.env.GITHUB_EVENT_NAME === 'pull_request_target'
     ) {
