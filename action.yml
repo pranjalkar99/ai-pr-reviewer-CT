@@ -8,7 +8,7 @@ inputs:
   debug:
     required: false
     description: 'Enable debug mode'
-    default: 'false'
+    default: 'true'
   max_files:
     required: false
     description:
@@ -18,7 +18,7 @@ inputs:
   review_simple_changes:
     required: false
     description: 'Review even when the changes are simple'
-    default: 'false'
+    default: 'true'
   review_comment_lgtm:
     required: false
     description: 'Leave comments even if the patch is LGTM'
@@ -240,4 +240,5 @@ inputs:
     default: '<img src="https://avatars.githubusercontent.com/in/347564?s=41" alt="Image description" width="20" height="20">'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  # main: 'dist/index.js'
+  main: 'src/main.js'
